@@ -159,6 +159,7 @@
 
                 </div>
                 <!-- End of Main Content -->
+
                 <!-- Modal Tambah -->
                 <div class="modal fade" id="modal-tambah" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -171,13 +172,13 @@
                                 </button>
                             </div>
 
-                            <form action="<?= base_url('konsumen/tambah') ?>" method="post" enctype="multipart/form-data" role="form">
+                            <form action="<?= base_url('transaksi/tambah') ?>" method="post" enctype="multipart/form-data" role="form">
                                 <div class="modal-body">
                                     <div class="form-group mb-3">
                                         <label class="col-form-label"><b>No. Polisi</b></label>
                                         <select class="form-control" name="no_polisi" id="no_polisi">
                                             <?php foreach ($konsumen as $data) { ?>
-                                                <option value="<?= $data['no_polisi'] ?>"><?php echo $data['no_polisi'] ?></option>
+                                                <option value="<?= $data['no_polisi'] ?>,<?= $data['konsumen'] ?>"><?php echo $data['no_polisi'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -209,6 +210,53 @@
                 </div>
                 <!-- End of Modal Tambah -->
 
+                <?php foreach ($transaksi as $data) : ?>
+                    <!-- Modal Edit -->
+                    <div class="modal fade" id="modal-edit<?= $data['id'] ?>" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Edit Transaksi</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <form action="<?= base_url('transaksi/edit') ?>" method="post" enctype="multipart/form-data" role="form">
+                                    <div class="modal-body">
+                                        <div class="form-group mb-3">
+                                            <label class="col-form-label"><b>No. Polisi</b></label>
+                                            <input class="form-control" name="no_polisi" type="text" required="" value="<?= $data['no_polisi'] ?>" disabled></input>
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <label class="col-form-label"><b>Tanggal Transaksi</b></label>
+                                            <input class="form-control" name="tgl_masuk" type="date" required="" value="<?= $data['tgl_masuk'] ?>" disabled></input>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label class="col-form-label"><b>Waktu Masuk</b></label>
+                                            <input class="form-control" name="waktu_masuk" type="time" required="" value="<?= $data['waktu_masuk'] ?>" disabled></input>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label class="col-form-label"><b>Waktu Keluar</b></label>
+                                            <input class="form-control" name="waktu_keluar" type="text" value="<?= $tanggal ?>"></input>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label class="col-form-label"><b>Biaya</b></label>
+                                            <input class="form-control" name="biaya" placeholder="-" type="number" disabled></input>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" id="simpan" class="btn btn-primary btn-fill">Simpan</button>
+                                        <button type="button" class="btn ml-auto btn-fill" data-dismiss="modal">Tutup</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Modal Edit -->
+                <?php endforeach; ?>
             </div>
             <!-- End of Content Wrapper -->
 
