@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Jun 2020 pada 12.50
+-- Waktu pembuatan: 19 Jun 2020 pada 17.35
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.11
 
@@ -57,9 +57,9 @@ CREATE TABLE `tb_transaksi` (
   `konsumen` varchar(100) NOT NULL,
   `no_polisi` varchar(100) NOT NULL,
   `tgl_masuk` date NOT NULL,
-  `waktu_masuk` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `waktu_keluar` timestamp NULL DEFAULT NULL,
-  `biaya` int(100) DEFAULT NULL
+  `waktu_masuk` varchar(100) NOT NULL,
+  `waktu_keluar` varchar(100) DEFAULT NULL,
+  `biaya` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `tb_transaksi` (
 --
 
 INSERT INTO `tb_transaksi` (`id`, `konsumen`, `no_polisi`, `tgl_masuk`, `waktu_masuk`, `waktu_keluar`, `biaya`) VALUES
-(0, '', '15124', '2020-06-19', '2020-06-19 10:44:32', NULL, NULL);
+(7, 'asfad', '11423', '2020-06-19', '19:55', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -96,6 +96,12 @@ ALTER TABLE `tb_transaksi`
 --
 ALTER TABLE `tb_konsumen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_transaksi`
+--
+ALTER TABLE `tb_transaksi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
