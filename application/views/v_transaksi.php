@@ -321,6 +321,7 @@
                                             <label class="col-form-label"><b>Waktu Keluar</b></label>
                                         </div>
                                         <div class="col-sm-6">
+                                            --:--
                                         </div>
                                     </div>
                                     <div class="form-group row mb-3">
