@@ -283,21 +283,35 @@
                             <div class="modal-content">
 
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Transaksi</h5>
+                                    <h5 class="modal-title">Detail Transaksi</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
 
-
                                 <div class="modal-body">
-
+                                    <div class="form-group row mb-3">
+                                        <div class="col-sm-6">
+                                            <label class="col-form-label"><b>Konsumen</b></label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <?= $data['konsumen'] ?>
+                                        </div>
+                                    </div>
                                     <div class="form-group row mb-3">
                                         <div class="col-sm-6">
                                             <label class="col-form-label"><b>No. Polisi</b></label>
                                         </div>
                                         <div class="col-sm-6">
                                             <?= $data['no_polisi'] ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <div class="col-sm-6">
+                                            <label class="col-form-label"><b>Jenis Kendaraan</b></label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <?= $data['jenis_kendaraan'] ?>
                                         </div>
                                     </div>
                                     <div class="form-group row mb-3">

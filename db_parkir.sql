@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Jun 2020 pada 18.21
+-- Waktu pembuatan: 19 Jun 2020 pada 18.34
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.11
 
@@ -44,8 +44,8 @@ CREATE TABLE `tb_konsumen` (
 
 INSERT INTO `tb_konsumen` (`id`, `konsumen`, `jenis_kendaraan`, `no_polisi`, `tgl_lahir`, `jenis_kelamin`, `no_hp`) VALUES
 (2, 'Putri', 'Motor', 'B 5403 RGS', '1998-02-04', 'L', '081299234'),
-(3, 'Budi', 'Motor', 'B 1208 UHY', '1990-12-18', 'L', '081299234'),
-(4, 'Felix', 'Motor', 'D 6027 AGS', '1996-08-17', 'L', '081299234'),
+(3, 'Budi', 'Mobil', 'B 1208 UHY', '1990-12-18', 'L', '081299234'),
+(4, 'Felix', 'Mobil', 'D 6027 AGS', '1996-08-17', 'L', '081299234'),
 (5, 'Shinta', 'Motor', 'B 2064 TYH', '1998-12-19', 'L', '081299234');
 
 -- --------------------------------------------------------
