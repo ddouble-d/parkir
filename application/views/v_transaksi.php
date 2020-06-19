@@ -237,7 +237,7 @@
                                         </div>
                                         <div class="form-group mb-3">
                                             <label class="col-form-label"><b>Waktu Masuk</b></label>
-                                            <input class="form-control" name="waktu_masuk" type="time" required="" value="<?= $data['waktu_masuk'] ?>" disabled></input>
+                                            <input class="form-control" name="waktu_masuk" type="text" required="" value="<?= $data['waktu_masuk'] ?>" disabled></input>
                                         </div>
                                         <div class="form-group mb-3">
                                             <label class="col-form-label"><b>Waktu Keluar</b></label>
