@@ -144,7 +144,7 @@
                                                         <button type="button" data-toggle="modal" data-target="#modal-edit<?= $data['id'] ?>" class="btn btn-warning btn-sm">
                                                             Edit
                                                         </button>
-                                                        <a href="<?= base_url('konsumen/delete/' . $data['id']); ?>" class="btn btn-danger btn-sm tombol-hapus">
+                                                        <a href="<?= base_url('konsumen/delete/' . $data['id']); ?>" onclick="return confirm('Hapus data?');" class="btn btn-danger btn-sm tombol-hapus">
                                                             Delete
                                                         </a>
                                                     </td>
