@@ -225,7 +225,7 @@
 
                                 <form action="<?= base_url('transaksi/edit') ?>" method="post" enctype="multipart/form-data" role="form">
                                     <div class="modal-body">
-                                        <input type="hidden" id="id" name="id" class="form-control" value="<?= $data['id'] ?>" disabled>
+
                                         <div class="form-group mb-3">
                                             <label class="col-form-label"><b>No. Polisi</b></label>
                                             <input class="form-control" name="no_polisi" type="text" required="" value="<?= $data['no_polisi'] ?>" disabled></input>
@@ -263,9 +263,10 @@
                                         ?>
                                         <div class="form-group mb-3">
                                             <label class="col-form-label"><b>Biaya</b></label>
-                                            <input class="form-control" name="biaya" placeholder="-" type="text" value="<?= $biaya ?>" disabled></input>
+                                            <input class="form-control" name="biaya" type="number" value="<?= $biaya ?>" disabled></input>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="id" value="<?= $data['id'] ?>">
                                     <div class="modal-footer">
                                         <button type="submit" id="simpan" class="btn btn-primary btn-fill">Simpan</button>
                                         <button type="button" class="btn ml-auto btn-fill" data-dismiss="modal">Tutup</button>
