@@ -141,10 +141,10 @@
                                                     <td><?= $data['jenis_kelamin'] ?></td>
                                                     <td><?= $data['no_hp'] ?></td>
                                                     <td>
-                                                        <button type="button" data-toggle="modal" data-target="#modal-edit<?= $data['id'] ?>" class="btn btn-warning btn-fill">
+                                                        <button type="button" data-toggle="modal" data-target="#modal-edit<?= $data['id'] ?>" class="btn btn-warning btn-sm">
                                                             Edit
                                                         </button>
-                                                        <a href="<?= base_url('konsumen/delete/' . $data['id']); ?>" class="btn btn-danger btn-fill tombol-hapus">
+                                                        <a href="<?= base_url('konsumen/delete/' . $data['id']); ?>" class="btn btn-danger btn-sm tombol-hapus">
                                                             Delete
                                                         </a>
                                                     </td>

@@ -139,10 +139,10 @@
                                                     <td><?= $data['waktu_keluar'] ?></td>
                                                     <td><?= $data['biaya'] ?></td>
                                                     <td>
-                                                        <button type="button" data-toggle="modal" data-target="#modal-view<?= $data['id'] ?>" class="btn btn-warning btn-fill">
+                                                        <button type="button" data-toggle="modal" data-target="#modal-view<?= $data['id'] ?>" class="btn btn-info btn-sm">
                                                             View
                                                         </button>
-                                                        <button type="button" data-toggle="modal" data-target="#modal-edit<?= $data['id'] ?>" class="btn btn-warning btn-fill">
+                                                        <button type="button" data-toggle="modal" data-target="#modal-edit<?= $data['id'] ?>" class="btn btn-warning btn-sm">
                                                             Edit
                                                         </button>
                                                     </td>
@@ -276,6 +276,66 @@
                         </div>
                     </div>
                     <!-- End of Modal Edit -->
+
+                    <!-- Modal View -->
+                    <div class="modal fade" id="modal-view<?= $data['id'] ?>" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Transaksi</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+
+                                <div class="modal-body">
+
+                                    <div class="form-group row mb-3">
+                                        <div class="col-sm-6">
+                                            <label class="col-form-label"><b>No. Polisi</b></label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <?= $data['no_polisi'] ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <div class="col-sm-6">
+                                            <label class="col-form-label"><b>Tanggal Transaksi</b></label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <?= $data['tgl_masuk'] ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <div class="col-sm-6">
+                                            <label class="col-form-label"><b>Waktu Masuk</b></label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <?= $data['waktu_masuk'] ?>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <div class="col-sm-6">
+                                            <label class="col-form-label"><b>Waktu Keluar</b></label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <div class="col-sm-6">
+                                            <label class="col-form-label"><b>Biaya</b></label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Modal View -->
                 <?php endforeach; ?>
             </div>
             <!-- End of Content Wrapper -->
