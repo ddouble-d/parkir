@@ -225,6 +225,7 @@
 
                                 <form action="<?= base_url('transaksi/edit') ?>" method="post" enctype="multipart/form-data" role="form">
                                     <div class="modal-body">
+                                        <input type="hidden" id="id" name="id" class="form-control" value="<?= $data['id'] ?>" disabled>
                                         <div class="form-group mb-3">
                                             <label class="col-form-label"><b>No. Polisi</b></label>
                                             <input class="form-control" name="no_polisi" type="text" required="" value="<?= $data['no_polisi'] ?>" disabled></input>
@@ -242,9 +243,27 @@
                                             <label class="col-form-label"><b>Waktu Keluar</b></label>
                                             <input class="form-control" name="waktu_keluar" type="text" value="<?= $tanggal ?>"></input>
                                         </div>
+                                        <?php
+                                        if ($data['jenis_kendaraan'] == 'Motor') {
+                                            $pertama = 2000;
+                                            $n = 500;
+                                        } else {
+                                            $pertama = 5000;
+                                            $n = 1000;
+                                        }
+                                        $totalJam = (intval($tanggal)) - (intval($data['waktu_masuk']));
+                                        if ($totalJam <= 1) {
+                                            $biaya = $pertama;
+                                        } elseif ($totalJam > 1) {
+                                            $jamSelanjutnya = $n * ($totalJam - 1);
+                                            $biaya = $pertama + $jamSelanjutnya;
+                                        } else {
+                                            $biaya = 0;
+                                        }
+                                        ?>
                                         <div class="form-group mb-3">
                                             <label class="col-form-label"><b>Biaya</b></label>
-                                            <input class="form-control" name="biaya" placeholder="-" type="number" disabled></input>
+                                            <input class="form-control" name="biaya" placeholder="-" type="text" value="<?= $biaya ?>" disabled></input>
                                         </div>
                                     </div>
                                     <div class="modal-footer">

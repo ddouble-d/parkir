@@ -1,10 +1,9 @@
 <?php
 class M_transaksi extends CI_model
 {
-
     public function getAllTransaksi()
     {
-        return $this->db->get('tb_transaksi')->result_array();
+        return $this->db->query("SELECT * FROM tb_transaksi JOIN tb_konsumen on tb_konsumen.no_polisi = tb_transaksi.no_polisi")->result_array();
     }
 
     public function saveTransaksi($data)
@@ -12,15 +11,9 @@ class M_transaksi extends CI_model
         $this->db->insert('tb_transaksi', $data);
     }
 
-    public function updateKonsumen($data, $id)
+    public function updateTransaksi($data, $id)
     {
         $this->db->where('id', $id);
         $this->db->update('tb_transaksi', $data);
-    }
-
-    public function deleteKonsumen($id)
-    {
-        $this->db->where('id', $id);
-        $this->db->delete('tb_transaksi');
     }
 }
